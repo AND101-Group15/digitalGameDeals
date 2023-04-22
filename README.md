@@ -3,9 +3,10 @@
 # AND101 Milestone 2 - **Team/App Name**
 
 Submitted by:
-- **Team Member 1 Name Here**
-- **Team Member 2 Name Here**
-- **etc**
+- **Yareli Gutierrez**
+- **Coryn Colon**
+- **Brian La Barbera**
+- **Samantha Pang**
 
 Time spent: **X** hours spent in total
 
