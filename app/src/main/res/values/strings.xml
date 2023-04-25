@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DigitalGameDeals</string>
+    <string name="button_text">Go!</string>
 </resources>
