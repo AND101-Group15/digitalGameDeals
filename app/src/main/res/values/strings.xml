@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DigitalGameDeals</string>
     <string name="button_text">Go!</string>
+    <string name="group_name">Group 15</string>
 </resources>
