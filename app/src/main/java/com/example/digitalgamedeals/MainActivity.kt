@@ -19,33 +19,65 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.button)
         val titleView = findViewById<TextView>(R.id.textView)
+        val info = findViewById<TextView>(R.id.textView2)
+        val searchBar = findViewById<EditText>(R.id.editText)
 
         button.setOnClickListener {
-           getTitle(titleView)
+
+            getInfo(searchBar, info)
+
         }
 
     }
 }
 
-
-private fun getTitle(titleView: TextView) {
+private fun getInfo(searchBar: EditText, info: TextView) {
     val client = AsyncHttpClient()
-    client["https://www.cheapshark.com/api/1.0/games?id=612", object : JsonHttpResponseHandler() {
+    client["https://www.cheapshark.com/api/1.0/deals?title=$searchBar", object :
+        JsonHttpResponseHandler() {
         override fun onFailure(
             statusCode: Int,
             headers: Headers?,
             response: String?,
             throwable: Throwable?
         ) {
-            Log.d("Title Fail", "error fetching!")
+            Log.d("Info Fail", "error fetching!")
         }
 
         override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON?) {
-            Log.d("Title Success", "response successful!")
-           val title = json?.jsonObject?.getJSONObject("cheapestPriceEver")?.getString("price")
+            Log.d("Info Success", "response successful!")
+            val result = json?.jsonObject?.getString("external")
 
-            titleView.text = title
+            info.text = result
+
+
         }
 
     }]
+
 }
+
+
+    private fun getTitle(titleView: TextView) {
+        val client = AsyncHttpClient()
+        client["https://www.cheapshark.com/api/1.0/games?id=612", object :
+            JsonHttpResponseHandler() {
+            override fun onFailure(
+                statusCode: Int,
+                headers: Headers?,
+                response: String?,
+                throwable: Throwable?
+            ) {
+                Log.d("Title Fail", "error fetching!")
+            }
+
+            override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON?) {
+                Log.d("Title Success", "response successful!")
+                val title = json?.jsonObject?.getJSONObject("cheapestPriceEver")?.getString("price")
+
+                titleView.text = title
+            }
+
+        }]
+    }
+
