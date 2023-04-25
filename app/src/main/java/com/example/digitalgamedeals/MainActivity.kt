@@ -1,15 +1,18 @@
 package com.example.digitalgamedeals
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
 
 class MainActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
 
 private fun getTitle(titleView: TextView) {
     val client = AsyncHttpClient()
@@ -38,7 +42,9 @@ private fun getTitle(titleView: TextView) {
 
         override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON?) {
             Log.d("Title Success", "response successful!")
-            json?.jsonObject?.getJSONObject("info")?.getString("title")
+           val title = json?.jsonObject?.getJSONObject("cheapestPriceEver")?.getString("price")
+
+            titleView.text = title
         }
 
     }]
