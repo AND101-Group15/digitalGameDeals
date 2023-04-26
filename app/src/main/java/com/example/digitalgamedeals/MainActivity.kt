@@ -20,6 +20,7 @@ import org.json.JSONObject
 class MainActivity : AppCompatActivity() {
     private lateinit var gameTitleList: MutableList<String>
     private lateinit var gamePriceList: MutableList<String>
+    private lateinit var gameIDList: MutableList<String>
     private lateinit var rvGame: RecyclerView
 
 
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         gameTitleList = mutableListOf()
         gamePriceList = mutableListOf()
+        gameIDList = mutableListOf()
         // Set Recycler to invisible until data is passed
         rvGame = findViewById(R.id.game_list)
         rvGame.setVisibility(View.GONE);
@@ -84,6 +86,8 @@ class MainActivity : AppCompatActivity() {
                     gameTitleList.add(title)
                     val cheapestPrice  = jsonObject.getString("cheapest")
                     gamePriceList.add(cheapestPrice)
+                    val gameID  = jsonObject.getString("steamAppID")
+                    gameIDList.add(gameID)
                 }
 
             }
