@@ -1,17 +1,18 @@
 <!-- (This is a comment) INSTRUCTIONS: Go through this page and fill out any **bolded** entries with their correct values.-->
 
-# AND101 Milestone 2 - **Team/App Name**
+# AND101 Milestone 2 - **Digital Game Deals**
 
 Submitted by:
-- **Team Member 1 Name Here**
-- **Team Member 2 Name Here**
-- **etc**
+- **Yareli Gutierrez**
+- **Coryn Colon**
+- **Brian La Barbera**
+- **Samantha Pang**
 
 Time spent: **X** hours spent in total
 
 ## Summary
 
-This document provides a summary of our project building process for our app, **App Name Here**
+This document provides a summary of our project building process for our app, **Digital Game Deals**.
 
 ## Milestone Requirements
 
@@ -19,7 +20,7 @@ This document provides a summary of our project building process for our app, **
 
 The following REQUIRED features are completed:
 
-- [ ] Assign features to each member of your group
+- [x] Assign features to each member of your group
 - [ ] Establish a goal time for completing each feature
 
 The following REQUIRED files are included:
