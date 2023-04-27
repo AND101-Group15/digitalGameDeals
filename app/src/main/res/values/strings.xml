@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">DigitalGameDeals</string>
+    <string name="search_text">Search</string>
     <string name="button_text">Go!</string>
     <string name="group_name">Group 15</string>
+    <string name="game_number">1</string>
+    <string name="game_title">Game Title</string>
+    <string name="game_price">cheapest price</string>
+    <string name="logo_description">logo of Digital Game Deals</string>
 </resources>
