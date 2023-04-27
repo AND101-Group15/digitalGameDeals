@@ -5,6 +5,7 @@
     <string name="group_name">Group 15</string>
     <string name="game_number">1</string>
     <string name="game_title">Game Title</string>
+    <string name="game_name"> \" game name \"</string>
     <string name="game_price">cheapest price</string>
     <string name="game_rating">rating</string>
     <string name="logo_description">logo of Digital Game Deals</string>

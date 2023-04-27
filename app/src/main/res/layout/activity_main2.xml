@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="110dp"
-        android:layout_height="120dp"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
         android:contentDescription="@string/logo_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,67 +20,60 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo" />
 
-    <EditText
-        android:id="@+id/editTextGameSearch"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:autofillHints="name"
-        android:hint="@string/search_text"
-        android:inputType="text|textAutoComplete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.554"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
-
     <TextView
         android:id="@+id/game_name"
-        android:layout_width="150dp"
+        android:layout_width="220dp"
         android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:textSize="25sp"
+        android:text="@string/game_name"
+        android:textSize="20sp"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="4dp"
-        android:text="@string/button_text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextGameSearch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.748"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <CheckBox
         android:id="@+id/OnSale"
         android:layout_width="115dp"
         android:layout_height="50dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:text="@string/OnSale_text"
-        app:layout_constraintStart_toStartOf="@id/editTextGameSearch"
-        app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
+        app:layout_constraintStart_toStartOf="@id/game_name"
+        app:layout_constraintTop_toBottomOf="@id/game_name" />
 
     <Spinner
         android:id="@+id/sort"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         android:tooltipText="@string/sort_text"
         app:layout_constraintStart_toEndOf="@id/OnSale"
-        app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
+        app:layout_constraintTop_toBottomOf="@id/game_name" />
+
+    <TextView
+        android:id="@+id/group_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="@string/group_name"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.99" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/game_list"
         app:layout_constraintTop_toBottomOf="@id/game_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="180dp" />
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="40dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,46 +9,47 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="110dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:contentDescription="@string/logo_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo" />
 
+
     <EditText
         android:id="@+id/editTextGameSearch"
-        android:layout_width="200dp"
+        android:layout_width="280dp"
         android:layout_height="50dp"
         android:autofillHints="name"
         android:hint="@string/search_text"
-        android:inputType="text|textAutoComplete"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:inputType="text"
+        android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.305"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintVertical_bias="0.145" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="90dp"
+        android:layout_width="70dp"
         android:layout_height="50dp"
+        android:layout_marginStart="4dp"
         android:text="@string/button_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/editTextGameSearch"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
+        app:layout_constraintTop_toTopOf="@id/editTextGameSearch"
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/OnSale"
         android:layout_width="115dp"
         android:layout_height="50dp"
+        android:layout_marginTop="4dp"
         android:text="@string/OnSale_text"
         app:layout_constraintStart_toStartOf="@id/editTextGameSearch"
         app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
@@ -58,6 +59,7 @@
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
         android:tooltipText="@string/sort_text"
         app:layout_constraintStart_toEndOf="@id/OnSale"
         app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
@@ -81,7 +83,7 @@
         android:id="@+id/game_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="210dp"
         android:layout_marginBottom="40dp"
         app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
 

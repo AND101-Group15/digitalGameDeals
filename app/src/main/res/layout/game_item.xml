@@ -17,38 +17,40 @@
 
     <TextView
         android:id="@+id/game_title"
-        android:layout_width="220dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="12dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
         android:scrollHorizontally="false"
         android:text="@string/game_title"
-        android:textSize="15sp"
+        android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/game_thumbnail"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.203" />
 
     <TextView
         android:id="@+id/game_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
         android:text="@string/game_price"
-        android:textSize="15sp"
-        app:layout_constraintBaseline_toBaselineOf="@id/game_title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/game_title" />
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintStart_toEndOf="@+id/game_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
     <TextView
         android:id="@+id/game_rating"
-        android:layout_width="60dp"
-        android:layout_height="30dp"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
         android:layout_marginTop="4dp"
         android:text="@string/game_rating"
-        app:layout_constraintTop_toBottomOf="@id/game_price"
-        app:layout_constraintStart_toStartOf="@id/game_price" />
+        app:layout_constraintStart_toStartOf="@id/game_price"
+        app:layout_constraintTop_toBottomOf="@id/game_price" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
