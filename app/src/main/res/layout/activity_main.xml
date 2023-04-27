@@ -45,7 +45,7 @@
         app:layout_constraintStart_toEndOf="@+id/editTextGameSearch" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/game_item"
+        android:id="@+id/game_list"
         app:layout_constraintTop_toBottomOf="@id/game_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
