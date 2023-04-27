@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             getGameInfo(search)
 
 
-            val adapter = GameAdapter(gameTitleList, gamePriceList)
+            val adapter = GameAdapter(gameTitleList, gamePriceList, gameIDList)
             rvGame.adapter = adapter
             rvGame.layoutManager = LinearLayoutManager(this@MainActivity)
             rvGame.setVisibility(View.VISIBLE)
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                     gameTitleList.add(title)
                     val cheapestPrice  = jsonObject.getString("cheapest")
                     gamePriceList.add(cheapestPrice)
-                    val gameID  = jsonObject.getString("steamAppID")
+                    val gameID  = jsonObject.getString("gameID")
                     gameIDList.add(gameID)
                 }
 
