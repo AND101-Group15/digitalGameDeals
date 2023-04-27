@@ -50,19 +50,16 @@
         android:layout_width="115dp"
         android:layout_height="50dp"
         android:text="@string/OnSale_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.388"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/editTextGameSearch"
         app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
 
     <Spinner
         android:id="@+id/sort"
         android:layout_width="130dp"
         android:layout_height="50dp"
+        android:layout_marginStart="10dp"
         android:tooltipText="@string/sort_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/OnSale"
         app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
 
     <TextView

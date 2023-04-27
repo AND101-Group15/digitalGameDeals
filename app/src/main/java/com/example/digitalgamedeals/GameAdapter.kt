@@ -11,13 +11,13 @@ class GameAdapter (private val gameTitleList: List<String>,
                    private val gamePriceList: List<String>,
                    private val gameIDList: List<String>): RecyclerView.Adapter<GameAdapter.ViewHolder>(){
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val gameNumber: TextView
+
         val gameTitle: TextView
         val gamePrice: TextView
 
         init {
             // Find our RecyclerView item's ImageView for future use
-            gameNumber = view.findViewById(R.id.game_number)
+
             gameTitle = view.findViewById(R.id.game_title)
             gamePrice = view.findViewById(R.id.game_price)
         }
@@ -33,7 +33,7 @@ class GameAdapter (private val gameTitleList: List<String>,
     override fun getItemCount() = gameTitleList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.gameNumber.text = (position+1).toString()
+
         holder.gameTitle.text = gameTitleList[position]
         holder.gamePrice.text = gamePriceList[position]
         val gameID = gameIDList[position]
