@@ -11,6 +11,7 @@ import android.widget.EditText
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
@@ -94,4 +95,47 @@ class MainActivity : AppCompatActivity() {
 
         }]
     }
+}
+
+private fun getDealInfo(searchBar: String) {
+    val client = AsyncHttpClient()
+    client["https://www.cheapshark.com/api/1.0/deals?title=$searchBar", object :
+        JsonHttpResponseHandler() {
+        override fun onFailure(
+            statusCode: Int,
+            headers: Headers?,
+            response: String?,
+            throwable: Throwable?
+        ) {
+            Log.d("Deal Fail", "error fetching!")
+        }
+
+
+        override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON?) {
+            Log.d("Deal Success", "response successful!")
+            Log.d("Deal Success", json.toString())
+
+            var jsonArray = json!!.jsonArray
+
+            for (i in 0 until json.jsonArray.length()) {
+                val jsonObject: JSONObject = jsonArray.getJSONObject(i)
+                val title  = jsonObject.getString("title")
+                dealList.add(title)
+                val salePrice  = jsonObject.getString("salePrice")
+                dealList.add(salePrice)
+                val normalPrice  = jsonObject.getString("normalPrice")
+                dealList.add(normalPrice)
+                val isOnSale  = jsonObject.getString("isOnSale")
+                dealList.add(isOnSale)
+                val thumb = jsonObject.getString("thumb")
+                dealList.add(thumb)
+                Glide.with(this@MainActivity)
+                    .load(thumb)
+                    .fitCenter()
+                    .into()
+            }
+
+        }
+
+    }]
 }
