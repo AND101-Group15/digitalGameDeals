@@ -24,7 +24,7 @@
 
     <TextView
         android:id="@+id/game_title"
-        android:layout_width="231dp"
+        android:layout_width="230dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:scrollHorizontally="false"

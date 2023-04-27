@@ -7,4 +7,9 @@
     <string name="game_title">Game Title</string>
     <string name="game_price">cheapest price</string>
     <string name="logo_description">logo of Digital Game Deals</string>
+    <string name="OnSale_text">Games On Sale</string>
+    <string name="sort_text">Sort</string>
+    <string-array name="sort_option">
+        <item>Lowest to Highest Price</item>
+    </string-array>
 </resources>
