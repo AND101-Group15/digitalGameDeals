@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var gameTitleList: MutableList<String>
     private lateinit var gamePriceList: MutableList<String>
     private lateinit var gameIDList: MutableList<String>
+    private lateinit var gameImageList: MutableList<String>
     private lateinit var rvGame: RecyclerView
 
 
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         gameTitleList = mutableListOf()
         gamePriceList = mutableListOf()
         gameIDList = mutableListOf()
+        gameImageList = mutableListOf()
         // Set Recycler to invisible until data is passed
         rvGame = findViewById(R.id.game_list)
         rvGame.setVisibility(View.GONE)
@@ -45,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             getGameInfo(search)
 
 
-            val adapter = GameAdapter(gameTitleList, gamePriceList, gameIDList)
+            val adapter = GameAdapter(gameTitleList, gamePriceList, gameIDList, gameImageList)
             rvGame.adapter = adapter
             adapter.setOnItemClickListener(object : GameAdapter.onItemClickListener{
                 override fun onItemClick(position: Int) {
@@ -96,6 +98,8 @@ class MainActivity : AppCompatActivity() {
                     gamePriceList.add(cheapestPrice)
                     val gameID  = jsonObject.getString("gameID")
                     gameIDList.add(gameID)
+                    val gameImage = jsonObject.getString("thumb")
+                    gameImageList.add(gameImage)
                 }
 
             }
