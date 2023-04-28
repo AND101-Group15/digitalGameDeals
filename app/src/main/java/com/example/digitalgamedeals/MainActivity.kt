@@ -1,6 +1,7 @@
 package com.example.digitalgamedeals
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.codepath.asynchttpclient.AsyncHttpClient
-import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
 import org.json.JSONObject
@@ -35,9 +35,7 @@ class MainActivity : AppCompatActivity() {
         gameIDList = mutableListOf()
         // Set Recycler to invisible until data is passed
         rvGame = findViewById(R.id.game_list)
-        rvGame.setVisibility(View.GONE);
-
-
+        rvGame.setVisibility(View.GONE)
 
 
         val searchBar = findViewById<EditText>(R.id.editTextGameSearch)
@@ -50,15 +48,25 @@ class MainActivity : AppCompatActivity() {
 
             val adapter = GameAdapter(gameTitleList, gamePriceList, gameIDList)
             rvGame.adapter = adapter
+            adapter.setOnItemClickListener(object : GameAdapter.onItemClickListener{
+                override fun onItemClick(position: Int) {
+                    val intent = Intent(this@MainActivity, MainActivity2::class.java)
+                    // This allows us to keep the name and game ID to the next activity
+                    intent.putExtra("game_title", gameTitleList[position])
+                    intent.putExtra("gameID",gameIDList[position])
+                    startActivity(intent)
+                }
+
+            })
             rvGame.layoutManager = LinearLayoutManager(this@MainActivity)
             rvGame.setVisibility(View.VISIBLE)
-
-
 
             val mDividerItemDecoration = DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL)
             mDividerItemDecoration.setDrawable(ColorDrawable(R.color.black))
             rvGame.addItemDecoration(mDividerItemDecoration)
         }
+
+
     }
 
     private fun getGameInfo(searchBar: String) {
@@ -95,47 +103,4 @@ class MainActivity : AppCompatActivity() {
 
         }]
     }
-}
-
-private fun getDealInfo(searchBar: String) {
-    val client = AsyncHttpClient()
-    client["https://www.cheapshark.com/api/1.0/deals?title=$searchBar", object :
-        JsonHttpResponseHandler() {
-        override fun onFailure(
-            statusCode: Int,
-            headers: Headers?,
-            response: String?,
-            throwable: Throwable?
-        ) {
-            Log.d("Deal Fail", "error fetching!")
-        }
-
-
-        override fun onSuccess(statusCode: Int, headers: Headers?, json: JSON?) {
-            Log.d("Deal Success", "response successful!")
-            Log.d("Deal Success", json.toString())
-
-            var jsonArray = json!!.jsonArray
-
-            for (i in 0 until json.jsonArray.length()) {
-                val jsonObject: JSONObject = jsonArray.getJSONObject(i)
-                val title  = jsonObject.getString("title")
-                dealList.add(title)
-                val salePrice  = jsonObject.getString("salePrice")
-                dealList.add(salePrice)
-                val normalPrice  = jsonObject.getString("normalPrice")
-                dealList.add(normalPrice)
-                val isOnSale  = jsonObject.getString("isOnSale")
-                dealList.add(isOnSale)
-                val thumb = jsonObject.getString("thumb")
-                dealList.add(thumb)
-                Glide.with(this@MainActivity)
-                    .load(thumb)
-                    .fitCenter()
-                    .into()
-            }
-
-        }
-
-    }]
 }
