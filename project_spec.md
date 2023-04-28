@@ -77,6 +77,8 @@ process, or what you learned this unit!
 
 
 For Milestone 2, include **2+ GIFs** of the build process here!
+
+
 <img src='https://i.imgur.com/JPRDyoR.gif' title='Build Process Demo' width='' alt='Video Demo' />
 
 ## License
