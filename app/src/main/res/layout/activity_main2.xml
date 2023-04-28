@@ -3,14 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity2">
-
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
         android:contentDescription="@string/logo_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,7 +16,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        tools:layout_editor_absoluteX="326dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <TextView
         android:id="@+id/game_name"
@@ -29,10 +29,10 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.748"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
         android:id="@+id/OnSale"
@@ -47,8 +47,8 @@
         android:id="@+id/sort"
         android:layout_width="130dp"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:tooltipText="@string/sort_text"
         app:layout_constraintStart_toEndOf="@id/OnSale"
         app:layout_constraintTop_toBottomOf="@id/game_name" />
@@ -70,10 +70,51 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/deals_list"
-        app:layout_constraintTop_toBottomOf="@id/game_name"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="40dp"/>
+        android:layout_width="411dp"
+        android:layout_height="504dp"
+        app:layout_constraintBottom_toTopOf="@+id/group_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/salePriceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sale Price"
+        app:layout_constraintBaseline_toBaselineOf="@+id/dealPriceLabel"
+        app:layout_constraintStart_toStartOf="@+id/OnSale" />
+
+    <TextView
+        android:id="@+id/dealPriceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="10dp"
+        android:text="Deal Price"
+        app:layout_constraintBaseline_toBaselineOf="@+id/onSaleLabel"
+        app:layout_constraintEnd_toStartOf="@+id/onSaleLabel"
+        app:layout_constraintHorizontal_bias="0.391"
+        app:layout_constraintStart_toEndOf="@+id/salePriceLabel" />
+
+    <TextView
+        android:id="@+id/onSaleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="On Sale?"
+        app:layout_constraintBaseline_toBaselineOf="@+id/ratingLabel"
+        app:layout_constraintEnd_toStartOf="@+id/ratingLabel"
+        app:layout_constraintHorizontal_bias="0.758"
+        app:layout_constraintStart_toEndOf="@+id/salePriceLabel" />
+
+    <TextView
+        android:id="@+id/ratingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:text="Rating"
+        app:layout_constraintBottom_toTopOf="@+id/deals_list"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
