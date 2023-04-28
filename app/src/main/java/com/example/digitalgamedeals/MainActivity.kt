@@ -1,6 +1,7 @@
 package com.example.digitalgamedeals
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,7 +13,6 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
-import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
 import okhttp3.Headers
 import org.json.JSONObject
@@ -34,9 +34,7 @@ class MainActivity : AppCompatActivity() {
         gameIDList = mutableListOf()
         // Set Recycler to invisible until data is passed
         rvGame = findViewById(R.id.game_list)
-        rvGame.setVisibility(View.GONE);
-
-
+        rvGame.setVisibility(View.GONE)
 
 
         val searchBar = findViewById<EditText>(R.id.editTextGameSearch)
@@ -49,15 +47,25 @@ class MainActivity : AppCompatActivity() {
 
             val adapter = GameAdapter(gameTitleList, gamePriceList, gameIDList)
             rvGame.adapter = adapter
+            adapter.setOnItemClickListener(object : GameAdapter.onItemClickListener{
+                override fun onItemClick(position: Int) {
+                    val intent = Intent(this@MainActivity, MainActivity2::class.java)
+                    // This allows us to keep the name and game ID to the next activity
+                    intent.putExtra("game_title", gameTitleList[position])
+                    intent.putExtra("gameID",gameIDList[position])
+                    startActivity(intent)
+                }
+
+            })
             rvGame.layoutManager = LinearLayoutManager(this@MainActivity)
             rvGame.setVisibility(View.VISIBLE)
-
-
 
             val mDividerItemDecoration = DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL)
             mDividerItemDecoration.setDrawable(ColorDrawable(R.color.black))
             rvGame.addItemDecoration(mDividerItemDecoration)
         }
+
+
     }
 
     private fun getGameInfo(searchBar: String) {
