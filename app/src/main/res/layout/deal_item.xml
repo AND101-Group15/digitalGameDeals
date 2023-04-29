@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
+    android:layout_height="100dp">
 
     <TextView
         android:id="@+id/salePrice"
@@ -41,31 +41,31 @@
         android:id="@+id/ratingNum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="9dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/ratingText"
         app:layout_constraintEnd_toEndOf="@+id/ratingText"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="@+id/ratingText"
-        app:layout_constraintTop_toTopOf="@+id/isOnSale"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.735"
         tools:text="8.5" />
 
-    <ImageView
-        android:id="@+id/isOnSale"
-        android:layout_width="57dp"
-        android:layout_height="45dp"
+    <TextView
+        android:id="@+id/store_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/store_label"
         app:layout_constraintBottom_toBottomOf="@+id/thumb"
         app:layout_constraintEnd_toStartOf="@+id/ratingText"
-        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintStart_toEndOf="@+id/normalPrice"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.868"
-        app:srcCompat="@drawable/sale" />
+        app:layout_constraintVertical_bias="0.682" />
 
     <ImageView
         android:id="@+id/thumb"
         android:layout_width="78dp"
         android:layout_height="76dp"
+        android:contentDescription="@string/thumbnail_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/salePrice"
         app:layout_constraintHorizontal_bias="0.432"

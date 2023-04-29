@@ -8,11 +8,12 @@
     <string name="game_name"> \" game name \"</string>
     <string name="game_price">cheapest price</string>
     <string name="game_rating">rating</string>
+    <string name="price_label">Sale Price</string>
+    <string name="deal_label">Deal Price</string>
+    <string name="store_label">Store</string>
     <string name="logo_description">logo of Digital Game Deals</string>
     <string name="thumbnail_description">thumbnail of Game</string>
     <string name="OnSale_text">Games On Sale</string>
     <string name="sort_text">Sort</string>
-    <string-array name="sort_option">
-        <item>Lowest to Highest Price</item>
-    </string-array>
+    <string name="sort_option">Lowest to Highest Price</string>
 </resources>

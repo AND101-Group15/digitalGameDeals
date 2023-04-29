@@ -43,13 +43,14 @@
         app:layout_constraintStart_toStartOf="@id/game_name"
         app:layout_constraintTop_toBottomOf="@id/game_name" />
 
-    <Spinner
+    <Button
         android:id="@+id/sort"
-        android:layout_width="130dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:tooltipText="@string/sort_text"
+        android:textSize="10sp"
+        android:text="@string/sort_option"
         app:layout_constraintStart_toEndOf="@id/OnSale"
         app:layout_constraintTop_toBottomOf="@id/game_name" />
 
@@ -80,7 +81,7 @@
         android:id="@+id/salePriceLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sale Price"
+        android:text="@string/price_label"
         app:layout_constraintBaseline_toBaselineOf="@+id/dealPriceLabel"
         app:layout_constraintStart_toStartOf="@+id/OnSale" />
 
@@ -90,17 +91,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="10dp"
-        android:text="Deal Price"
-        app:layout_constraintBaseline_toBaselineOf="@+id/onSaleLabel"
-        app:layout_constraintEnd_toStartOf="@+id/onSaleLabel"
+        android:text="@string/deal_label"
+        app:layout_constraintBaseline_toBaselineOf="@+id/store_label"
+        app:layout_constraintEnd_toStartOf="@+id/store_label"
         app:layout_constraintHorizontal_bias="0.391"
         app:layout_constraintStart_toEndOf="@+id/salePriceLabel" />
 
     <TextView
-        android:id="@+id/onSaleLabel"
+        android:id="@+id/store_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="On Sale?"
+        android:text="@string/store_label"
         app:layout_constraintBaseline_toBaselineOf="@+id/ratingLabel"
         app:layout_constraintEnd_toStartOf="@+id/ratingLabel"
         app:layout_constraintHorizontal_bias="0.758"
@@ -112,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:text="Rating"
+        android:text="@string/game_rating"
         app:layout_constraintBottom_toTopOf="@+id/deals_list"
         app:layout_constraintEnd_toEndOf="parent" />
 

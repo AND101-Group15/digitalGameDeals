@@ -54,13 +54,14 @@
         app:layout_constraintStart_toStartOf="@id/editTextGameSearch"
         app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
 
-    <Spinner
+    <Button
         android:id="@+id/sort"
-        android:layout_width="130dp"
+        android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"
-        android:tooltipText="@string/sort_text"
+        android:textSize="10sp"
+        android:text="@string/sort_option"
         app:layout_constraintStart_toEndOf="@id/OnSale"
         app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
 
