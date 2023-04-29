@@ -31,13 +31,14 @@ App that provides the user with different prices of a PC game.
 Required Features:
 
 - Search bar - searches name of game across multiple stores
-- filter results by isOnSale
 - displays games with information like if it's on sale, original price, sale price, rating, and store
-- order results from lowest price to highest price
+- Use mainactivity data that displays list of games to second activity that displays list of deals 
+
 
 Stretch Features:
-
+- filter results by isOnSale
 - filter by store
+- order results from lowest price to highest price
 
 
 ### 2. Chosen API(s)
