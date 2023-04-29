@@ -57,11 +57,7 @@ class GameAdapter (private val gameTitleList: List<String>,
 
         holder.gameTitle.text = gameTitleList[position]
         holder.gamePrice.text = gamePriceList[position]
-        val gameID = gameIDList[position]
 
-        holder.gameTitle.setOnClickListener {
-            Toast.makeText(holder.itemView.context, "Game ID: $gameID", Toast.LENGTH_SHORT).show()
-        }
 
     }
 }

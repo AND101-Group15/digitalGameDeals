@@ -43,14 +43,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.133" />
 
-    <TextView
-        android:id="@+id/game_rating"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/game_rating"
-        app:layout_constraintStart_toStartOf="@id/game_price"
-        app:layout_constraintTop_toBottomOf="@id/game_price" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
