@@ -42,9 +42,7 @@ The following EXTRA features are implemented:
 ## 🎥 Demo Video
 
 Here's a video that demos all of the app's implemented features:
-
-[![Video Demo](https://www.youtube.com/watch?v=Jrcstja0TZQ/0.jpg)](https://www.youtube.com/watch?v=Jrcstja0TZQ "demo video 3")
-
+[![Everything Is AWESOME](http://i.imgur.com/Ot5DWAW.png)](https://youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
 VIDEO created with YouTube
 
 ## Notes
