@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var gameTitleList: MutableList<String>
     private lateinit var gamePriceList: MutableList<String>
     private lateinit var gameIDList: MutableList<String>
+    private lateinit var gameImageList: MutableList<String>
     private lateinit var rvGame: RecyclerView
 
 
@@ -33,33 +34,34 @@ class MainActivity : AppCompatActivity() {
         gameTitleList = mutableListOf()
         gamePriceList = mutableListOf()
         gameIDList = mutableListOf()
+        gameImageList = mutableListOf()
         // Set Recycler to invisible until data is passed
         rvGame = findViewById(R.id.game_list)
-        rvGame.setVisibility(View.GONE)
+        rvGame.visibility = View.GONE
 
 
         val searchBar = findViewById<EditText>(R.id.editTextGameSearch)
         val button = findViewById<Button>(R.id.button)
 
         button.setOnClickListener {
-            val search = searchBar.getText().toString()
+            val search = searchBar.text.toString()
             getGameInfo(search)
 
 
-            val adapter = GameAdapter(gameTitleList, gamePriceList, gameIDList)
+            val adapter = GameAdapter(gameTitleList, gamePriceList, gameIDList, gameImageList)
             rvGame.adapter = adapter
             adapter.setOnItemClickListener(object : GameAdapter.onItemClickListener{
                 override fun onItemClick(position: Int) {
                     val intent = Intent(this@MainActivity, MainActivity2::class.java)
                     // This allows us to keep the name and game ID to the next activity
                     intent.putExtra("game_title", gameTitleList[position])
-                    intent.putExtra("gameID",gameIDList[position])
+                    intent.putExtra("gameID",gameIDList[position].toInt())
                     startActivity(intent)
                 }
 
             })
             rvGame.layoutManager = LinearLayoutManager(this@MainActivity)
-            rvGame.setVisibility(View.VISIBLE)
+            rvGame.visibility = View.VISIBLE
 
             val mDividerItemDecoration = DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL)
             mDividerItemDecoration.setDrawable(ColorDrawable(R.color.black))
@@ -97,6 +99,8 @@ class MainActivity : AppCompatActivity() {
                     gamePriceList.add(cheapestPrice)
                     val gameID  = jsonObject.getString("gameID")
                     gameIDList.add(gameID)
+                    val gameImage = jsonObject.getString("thumb")
+                    gameImageList.add(gameImage)
                 }
 
             }

@@ -80,6 +80,7 @@ For Milestone 2, include **2+ GIFs** of the build process here!
 
 
 <img src='https://i.imgur.com/JPRDyoR.gif' title='Build Process Demo' width='' alt='Video Demo' />
+<img src='/AND101_App_Build_Process2.gif' title='Build Process Demo2' width='' alt='Video Demo' />
 
 ## License
 

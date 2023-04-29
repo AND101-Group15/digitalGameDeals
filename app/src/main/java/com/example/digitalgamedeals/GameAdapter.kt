@@ -8,10 +8,12 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class GameAdapter (private val gameTitleList: List<String>,
                    private val gamePriceList: List<String>,
-                   private val gameIDList: List<String>): RecyclerView.Adapter<GameAdapter.ViewHolder>(){
+                   private val gameIDList: List<String>,
+                   private val gameImageList: List<String>): RecyclerView.Adapter<GameAdapter.ViewHolder>(){
     class ViewHolder(view: View, listener: onItemClickListener) : RecyclerView.ViewHolder(view) {
         val gameThumbnail: ImageButton
         val gameTitle: TextView
@@ -47,6 +49,11 @@ class GameAdapter (private val gameTitleList: List<String>,
     override fun getItemCount() = gameTitleList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
+        Glide.with(holder.itemView)
+            .load(gameImageList[position])
+            .centerCrop()
+            .into(holder.gameThumbnail)
 
         holder.gameTitle.text = gameTitleList[position]
         holder.gamePrice.text = gamePriceList[position]
