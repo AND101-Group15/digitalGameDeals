@@ -98,6 +98,7 @@ For Milestone 2, include **2+ GIFs** of the build process here!
 The following REQUIRED features are completed:
 
 - [x] **Search Bar**
+- [x] **Display game info**
 - [x] **Main Activity to Next Activity**
 
 The following STRETCH features are completed:
