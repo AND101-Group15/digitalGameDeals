@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,7 +22,6 @@ class MainActivity2 : AppCompatActivity() {
     private lateinit var gameSalePriceList: MutableList<String>
     private lateinit var gameStoreList: MutableList<String>
     private lateinit var gameIsOnSale: MutableList<String>
-    private lateinit var checkbox: CheckBox
     private lateinit var gameThumbnailList: MutableList<String>
     private lateinit var gameRatingNumList: MutableList<String>
     private lateinit var gameRatingTextList: MutableList<String>
@@ -43,7 +41,6 @@ class MainActivity2 : AppCompatActivity() {
         gameThumbnailList = mutableListOf()
         gameRatingNumList = mutableListOf()
         gameRatingTextList = mutableListOf()
-        checkbox = findViewById(R.id.OnSale)
 
 
 
@@ -86,6 +83,7 @@ class MainActivity2 : AppCompatActivity() {
 
                 for (i in 0 until json.jsonArray.length()) {
                     val jsonObject: JSONObject = jsonArray.getJSONObject(i)
+
                     val salePrice = jsonObject.getString("salePrice")
                     gameSalePriceList.add(salePrice)
                     val normalPrice = jsonObject.getString("normalPrice")
@@ -103,7 +101,7 @@ class MainActivity2 : AppCompatActivity() {
 
 
                     rvDeals = findViewById(R.id.deals_list)
-                    val adapter = DealsAdapter(gameNormalPriceList, gameSalePriceList,gameStoreList,checkbox,gameThumbnailList, gameRatingNumList, gameRatingTextList)
+                    val adapter = DealsAdapter(gameNormalPriceList, gameSalePriceList,gameStoreList,gameThumbnailList, gameRatingNumList, gameRatingTextList)
                     rvDeals.adapter = adapter
                     rvDeals.layoutManager = LinearLayoutManager(this@MainActivity2)
 

@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="85dp"
-        android:layout_height="80dp"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:contentDescription="@string/logo_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,42 +16,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="326dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/game_name"
-        android:layout_width="220dp"
+        android:layout_width="250dp"
         android:layout_height="50dp"
         android:text="@string/game_name"
         android:textSize="20sp"
         android:textStyle="bold|italic"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logo"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <CheckBox
-        android:id="@+id/OnSale"
-        android:layout_width="115dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/OnSale_text"
-        app:layout_constraintStart_toStartOf="@id/game_name"
-        app:layout_constraintTop_toBottomOf="@id/game_name" />
-
     <Button
         android:id="@+id/sort"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:textSize="10sp"
+        android:textSize="15sp"
         android:text="@string/sort_option"
-        app:layout_constraintStart_toEndOf="@id/OnSale"
+        app:layout_constraintStart_toEndOf="@id/logo"
         app:layout_constraintTop_toBottomOf="@id/game_name" />
 
     <TextView
@@ -71,10 +60,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/deals_list"
-        android:layout_width="411dp"
-        android:layout_height="504dp"
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
         app:layout_constraintBottom_toTopOf="@+id/group_name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -82,8 +72,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/price_label"
+        android:layout_marginStart="110dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/dealPriceLabel"
-        app:layout_constraintStart_toStartOf="@+id/OnSale" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/dealPriceLabel"

@@ -55,7 +55,6 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, MainActivity2::class.java)
                     // This allows us to keep the name and game ID to the next activity
                     intent.putExtra("game_title", gameTitleList[position])
-                    intent.putExtra("gameID",gameIDList[position].toInt())
                     startActivity(intent)
                 }
 
@@ -89,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("Info Success", "response successful!")
                 Log.d("Info Success", json.toString())
 
-                var jsonArray = json!!.jsonArray
+                val jsonArray = json!!.jsonArray
 
                 for (i in 0 until json.jsonArray.length()) {
                     val jsonObject: JSONObject = jsonArray.getJSONObject(i)
