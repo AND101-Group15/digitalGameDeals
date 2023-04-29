@@ -9,7 +9,7 @@ Submitted by:
 - **Brian La Barbera**
 - **Samantha Pang**
 
-Time spent: **X** hours spent in total
+Time spent: 15 hours spent in total
 
 ## Summary
 
@@ -32,8 +32,8 @@ The following REQUIRED files are included:
   - [X] Checked off 2+ completed features
   - [X] 2+ GIFs of build progress
 
-- [ ] Our 🎥 Demo Video
-  - [ ] We have also added the Demo Video Link to the Group Info Form on the course portal.
+- [x] Our 🎥 Demo Video
+  - [x] We have also added the Demo Video Link to the Group Info Form on the course portal.
 
 The following EXTRA features are implemented:
 
@@ -43,9 +43,9 @@ The following EXTRA features are implemented:
 
 Here's a video that demos all of the app's implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Demo' width='' alt='Video Demo' />
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Jrcstja0TZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-VIDEO created with **your chosen video tool**
+VIDEO created with YouTube
 
 ## Notes
 
