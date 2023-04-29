@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="120dp">
 
     <TextView
         android:id="@+id/salePrice"
@@ -56,10 +56,10 @@
         android:text="@string/store_label"
         app:layout_constraintBottom_toBottomOf="@+id/thumb"
         app:layout_constraintEnd_toStartOf="@+id/ratingText"
-        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/normalPrice"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682" />
+        app:layout_constraintVertical_bias="0.7" />
 
     <ImageView
         android:id="@+id/thumb"

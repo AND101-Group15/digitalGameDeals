@@ -45,26 +45,15 @@
         app:layout_constraintTop_toTopOf="@id/editTextGameSearch"
         app:layout_constraintVertical_bias="0.0" />
 
-    <CheckBox
-        android:id="@+id/OnSale"
-        android:layout_width="115dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/OnSale_text"
-        app:layout_constraintStart_toStartOf="@id/editTextGameSearch"
-        app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
-
     <Button
         android:id="@+id/sort"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"
-        android:textSize="10sp"
         android:text="@string/sort_option"
-        app:layout_constraintStart_toEndOf="@id/OnSale"
-        app:layout_constraintTop_toBottomOf="@id/editTextGameSearch" />
-
+        android:textSize="10sp"
+        app:layout_constraintTop_toBottomOf="@id/editTextGameSearch"
+        app:layout_constraintStart_toStartOf="@id/editTextGameSearch" />
     <TextView
         android:id="@+id/group_name"
         android:layout_width="wrap_content"

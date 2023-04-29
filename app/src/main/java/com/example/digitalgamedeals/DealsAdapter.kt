@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide
 class DealsAdapter(private val gameNormalPriceList: List<String>,
                     private val gameSalePriceList: List<String>,
                     private val gameStoreList: List<String>,
-                   private val checkbox: CheckBox,
                     private val gameThumbnailList: List<String>,
                     private val gameRatingNumList: List<String>,
                     private val gameRatingTextList: List<String>): RecyclerView.Adapter<DealsAdapter.ViewHolder>(){
@@ -49,21 +48,6 @@ class DealsAdapter(private val gameNormalPriceList: List<String>,
     override fun getItemCount() = gameNormalPriceList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
-        holder.gameNormalPrice.text = "$"+ gameNormalPriceList[position]
-        holder.gameSalePrice.text = "$"+ gameSalePriceList[position]
-        holder.gameStoreList.text = gameStoreList[position]
-
-        if (checkbox.isChecked) {
-            if(gameNormalPriceList[position] === gameSalePriceList[position]) {
-                gameNormalPriceList[position + 1]
-                gameSalePriceList[position + 1]
-                gameStoreList[position + 1]
-                gameThumbnailList[position + 1]
-                gameRatingNumList[position + 1]
-                gameRatingTextList[position + 1]
-            }
-        }
 
         holder.gameNormalPrice.text = "$"+ gameNormalPriceList[position]
         holder.gameSalePrice.text = "$"+ gameSalePriceList[position]
