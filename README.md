@@ -37,7 +37,7 @@ The following REQUIRED files are included:
 
 The following EXTRA features are implemented:
 
-- [ ] List anything else that you added to improve your submission!
+- [x] added a stretch feature - sort prices of games from lowest to highest
 
 ## 🎥 Demo Video
 
