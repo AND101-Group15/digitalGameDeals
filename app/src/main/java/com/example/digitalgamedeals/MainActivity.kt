@@ -79,7 +79,6 @@ class MainActivity : AppCompatActivity() {
             adapter.setOnItemClickListener(object : GameAdapter.onItemClickListener{
                 override fun onItemClick(position: Int) {
                     val intent = Intent(this@MainActivity, MainActivity2::class.java)
-                    // This allows us to keep the name and game ID to the next activity
                     intent.putExtra("game_title", gameTitleList[position])
                     intent.putExtra("gameID",gameIDList[position].toInt())
                     startActivity(intent)
