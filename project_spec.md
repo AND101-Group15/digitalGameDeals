@@ -100,6 +100,9 @@ The following REQUIRED features are completed:
 - [x] **Search Bar**
 - [x] **Main Activity to Next Activity**
 
+The following STRETCH features are completed:
+
+- [x] **Sort button - lowest to highest price**
 
 
 ## License
