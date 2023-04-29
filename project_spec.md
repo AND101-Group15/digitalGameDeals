@@ -48,11 +48,18 @@ Stretch Features:
 
 ### 3. User Interaction
 
-Required Feature
+Required Features
 - **Search Bar**
     - **user writes title of game**
-      - => **results display with games from multiple stores**
-      - => **users can scroll through a list to compare prices**
+      - => **results display with games that have keyword**
+
+- **Main Activity to Next Activity**
+    - => **user clicks on game item**
+      - => **data is carried from main activity to mainactivity2**
+      - => **users can scroll through a list to compare prices at different store**
+      - => **users can scroll through a list to compare ratings**
+
+Stretch Features 
 - **Filter Search**
     - **user can filter by checking if game is on Sale**
       - => **results display games that are on Sale**
@@ -81,6 +88,14 @@ For Milestone 2, include **2+ GIFs** of the build process here!
 
 <img src='https://i.imgur.com/JPRDyoR.gif' title='Build Process Demo' width='' alt='Video Demo' />
 <img src='/AND101_App_Build_Process2.gif' title='Build Process Demo2' width='' alt='Video Demo' />
+
+
+The following REQUIRED features are completed:
+
+- [x] **Search Bar**
+- [x] **Main Activity to Next Activity**
+
+
 
 ## License
 
