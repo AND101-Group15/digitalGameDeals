@@ -44,6 +44,7 @@ The following EXTRA features are implemented:
 Here's a video that demos all of the app's implemented features:
 
 <img src='[http://i.imgur.com/link/to/your/gif/file.gif](https://www.youtube.com/watch?v=Jrcstja0TZQ)' title='Video Demo' width='' alt='Video Demo' />
+[<img src="http://i.imgur.com/link/to/your/gif/file.gif" width="50%">](https://www.youtube.com/watch?v=Jrcstja0TZQ "Video Demo")
 
 VIDEO created with YouTube
 
