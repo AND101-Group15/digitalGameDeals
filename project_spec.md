@@ -69,6 +69,10 @@ Stretch Features
     - **user chooses sort** 
       - => **results will be sorted from lowest to highest price**
 
+- **Filter Store Search**
+    - **user can filter game by store**
+      - => **results display games that are of that specific store**
+
 ## Wireframes
 
 <!-- Add picture of your hand sketched wireframes in this section -->
