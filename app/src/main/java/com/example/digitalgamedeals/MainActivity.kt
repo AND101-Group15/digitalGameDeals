@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var gameIDList: MutableList<String>
     private lateinit var gameImageList: MutableList<String>
     private lateinit var rvGame: RecyclerView
+    private lateinit var adapter: GameAdapter
 
 
     @SuppressLint("ResourceAsColor")
@@ -65,6 +66,33 @@ class MainActivity : AppCompatActivity() {
             val mDividerItemDecoration = DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL)
             mDividerItemDecoration.setDrawable(ColorDrawable(R.color.black))
             rvGame.addItemDecoration(mDividerItemDecoration)
+        }
+        adapter = GameAdapter(gameTitleList, gamePriceList, gameIDList, gameImageList)
+        val sort = findViewById<Button>(R.id.sort)
+        sort.setOnClickListener {
+            val search = searchBar.text.toString()
+            getGameInfo(search)
+
+            adapter = GameAdapter(gameTitleList, gamePriceList, gameIDList, gameImageList)
+            rvGame.adapter = adapter
+            adapter.setOnItemClickListener(object : GameAdapter.onItemClickListener{
+                override fun onItemClick(position: Int) {
+                    val intent = Intent(this@MainActivity, MainActivity2::class.java)
+                    intent.putExtra("game_title", gameTitleList[position])
+                    intent.putExtra("gameID",gameIDList[position].toInt())
+                    startActivity(intent)
+                }
+
+            })
+            rvGame.layoutManager = LinearLayoutManager(this@MainActivity)
+            rvGame.visibility = View.VISIBLE
+
+            val mDividerItemDecoration = DividerItemDecoration(this@MainActivity, LinearLayoutManager.VERTICAL)
+            mDividerItemDecoration.setDrawable(ColorDrawable(R.color.black))
+            rvGame.addItemDecoration(mDividerItemDecoration)
+
+            gamePriceList.sortBy { it.toDouble() }
+            adapter.notifyDataSetChanged()
         }
 
 
